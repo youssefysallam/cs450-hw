@@ -15,19 +15,39 @@
 
 
 ;; Exercise 1
-(define (min-from n l) 'todo)
+(define (min-from n l) 
+  (foldl 
+    (lambda (x y) 
+      (if (< x y) x y)
+    ) n l)
+)
 
 ;; Exercise 2
-(define (count l) 'todo)
+(define (count l) 
+  (foldl
+    (lambda (x y) 
+      (+ 1 y)
+    ) 0 l)
+)
 
 ;; Exercise 3
-(define (sum l) 'todo)
+(define (sum l) 
+  (foldr
+    (lambda (x y)
+      (+ x y)
+    ) 0 l)
+)
 
 ;; Exercise 4
-(define (occurrences n l) 'todo)
+(define (occurrences n l) 
+  (foldl
+    (lambda (x y)
+      (if (= x n) (+ 1 y) y)
+    ) 0 l)
+)
 
 ;; Exercise 5
-(define (prefix s l) 'todo)
+(define (prefix s l) )
 
 ;; Exercise 6
 (define (interleave l1 l2)
